@@ -4,7 +4,7 @@ import { UseQueryResult, useQuery } from '@tanstack/react-query';
 import getData from './ts/getData';
 
 const App = (): JSX.Element => {
-  const { data }: UseQueryResult = useQuery({
+  const { data }: any = useQuery({
     queryKey: ['data'],
     queryFn: getData,
   });
@@ -25,6 +25,7 @@ const App = (): JSX.Element => {
           Learn React
         </a>
       </header>
+      <div>{data}</div>
     </div>
   );
 };

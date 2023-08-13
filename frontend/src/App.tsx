@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { UseQueryResult, useQuery } from '@tanstack/react-query';
 import getData from './ts/getData';
+import Message from './components/Message';
 
 const App = (): JSX.Element => {
   const { data }: any = useQuery({
@@ -10,22 +11,10 @@ const App = (): JSX.Element => {
   });
 
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
-      <div>{data}</div>
+    <div className='App-header'>
+      <img src={logo} className='App-logo' alt='logo' />
+      <div>バックエンドから取得した値：{data}</div>
+      <Message />
     </div>
   );
 };
